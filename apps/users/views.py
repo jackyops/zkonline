@@ -4,9 +4,9 @@ from django.contrib.auth.backends import ModelBackend
 
 from .models import UserProfile,EmailVerifyRecord
 from operation.models import UserMessage
-from .forms import LoginForm,RegisterForm,ForgetForm,ModifyPwdForm
 from django.contrib.auth.hashers import make_password
 from django.views.generic.base import View
+from .forms import LoginForm,RegisterForm,ForgetForm,ModifyPwdForm
 from django.contrib.auth import authenticate,login
 from django.http import HttpResponse,HttpResponseRedirect
 from utils.email_send import send_register_email
@@ -41,7 +41,7 @@ class LoginViews(View):
                 else:
                     return render(request, "login.html", {"msg": "用户未激活"})
             else:
-                return render(request, "login.html", {"msg": "用户名密码错误"})
+                return render(request, "login.html", {"msg": "用户名或密码错误"})
         else:
             return render(request, "login.html", {"login_form": login_form})
 

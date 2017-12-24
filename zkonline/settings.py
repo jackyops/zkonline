@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+# 自定义认证函数
 # Application definition
 AUTHENTICATION_BACKENDS = (
     'users.views.CustomBackend',
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'captcha',
     'pure_pagination',
 ]
+# 重载方法
 AUTH_USER_MODEL = "users.UserProfile"
 
 MIDDLEWARE = [
@@ -144,9 +145,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = "smtp.163.com"
 EMAIL_PORT = 25
 EMAIL_HOST_USER = "jackyops@163.com"
-EMAIL_HOST_PASSWORD = "jacky008"
+EMAIL_HOST_PASSWORD = "jacky007"
 EMAIL_USE_TLS =True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 MEDIA_URL = '/media/'
+# 存放根目录
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')

@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-from django.views.generic import TemplateView
 # django处理静态文件内容
+from django.views.generic import TemplateView
 from django.views.static import serve
 from zkonline.settings import MEDIA_ROOT
 

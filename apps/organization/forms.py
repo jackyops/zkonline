@@ -12,6 +12,7 @@ class UserAskForm(forms.ModelForm):
         fields = ['name','mobile','course_name']
 
     """
+    该方法必须以clean_字段名定义的函数，会主动去调用该函数
     验证手机号码是否合法
     """
     def clean_mobile(self):
